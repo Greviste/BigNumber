@@ -307,7 +307,12 @@ namespace BigNumber
     
     void BigUint::reset()
     {
-        return _data.clear();
+        _data.clear();
+    }
+    
+    void BigUint::shrink_to_fit()
+    {
+        _data.shrink_to_fit();
     }
     
     BigUint fma(const BigUint& l, const BigUint& r, BigUint to)
@@ -373,7 +378,6 @@ namespace BigNumber
     void BigUint::shrink()
     {
         _data.resize(trim(_data).size());
-        _data.shrink_to_fit();
     }
     
     BigUint::operator bool() const

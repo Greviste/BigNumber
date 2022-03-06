@@ -37,6 +37,7 @@ namespace BigNumber
         }
         
         void reset();
+        void shrink_to_fit();
         
         friend BigUint fma(const BigUint&, const BigUint&, BigUint);
         friend std::pair<BigUint, BigUint> div(BigUint, const BigUint&); //Returns quotient and remainder
